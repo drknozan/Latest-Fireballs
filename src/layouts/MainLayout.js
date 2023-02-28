@@ -1,15 +1,12 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 
 export default function MainLayout({ children }) {
-    
-    return (
-        <div>
-            <Header />
-            <div className="container mx-auto">
-            { children }
-            </div>
-            <Footer />
-        </div>
-    );
+  return (
+    <div>
+      <Header />
+      <div className="container mx-auto">{children}</div>
+      <Footer />
+    </div>
+  );
 }
