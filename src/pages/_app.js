@@ -5,6 +5,7 @@ import '@/styles/nprogress.css';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import NProgress from 'nprogress';
+import Head from 'next/head';
 
 const kanit = Kanit({ weight: '400', subsets: ['latin'] });
 
@@ -32,10 +33,19 @@ export default function App({ Component, pageProps }) {
   }, [router]);
 
   return (
-    <main className={kanit.className}>
-      <MainLayout>
-        <Component {...pageProps} />
-      </MainLayout>
-    </main>
+    <>
+      <Head>
+        <title>Latest Fireballs</title>
+        <link
+          rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☄️</text></svg>"
+        ></link>
+      </Head>
+      <main className={kanit.className}>
+        <MainLayout>
+          <Component {...pageProps} />
+        </MainLayout>
+      </main>
+    </>
   );
 }
