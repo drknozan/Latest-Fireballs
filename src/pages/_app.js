@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import NProgress from 'nprogress';
 import Head from 'next/head';
+import { Analytics } from '@vercel/analytics/react';
 
 const kanit = Kanit({ weight: '400', subsets: ['latin'] });
 
@@ -44,6 +45,7 @@ export default function App({ Component, pageProps }) {
       <main className={kanit.className}>
         <MainLayout>
           <Component {...pageProps} />
+          <Analytics />
         </MainLayout>
       </main>
     </>
