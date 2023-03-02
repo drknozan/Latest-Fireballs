@@ -2,8 +2,10 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { MdOutlineMenu, MdOutlineClose } from 'react-icons/md';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 
 export default function Header() {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -47,36 +49,33 @@ export default function Header() {
                   setIsOpen(false);
                 }}
               />
-              <div className="w-36 text-center border-2 border-gray-100 text-gray-100 px-4 py-2 rounded active:bg-white active:text-red-500">
-                <Link
-                  href="/"
-                  onClick={() => {
-                    setIsOpen(false);
-                  }}
-                >
-                  Home
-                </Link>
-              </div>
-              <div className="w-36 text-center border-2 border-gray-100 text-gray-100 px-4 py-2 rounded active:bg-white active:text-red-500">
-                <Link
-                  href="/fireball-map"
-                  onClick={() => {
-                    setIsOpen(false);
-                  }}
-                >
-                  Fireball Map
-                </Link>
-              </div>
-              <div className="w-36 text-center border-2 border-gray-100 text-gray-100 px-4 py-2 rounded active:bg-white active:text-red-500">
-                <Link
-                  href="/#contact"
-                  onClick={() => {
-                    setIsOpen(false);
-                  }}
-                >
-                  Contact
-                </Link>
-              </div>
+              <button
+                className="w-36 text-center border-2 border-gray-100 text-gray-100 px-4 py-2 rounded active:bg-white active:text-red-500"
+                onClick={() => {
+                  setIsOpen(false);
+                  router.push('/');
+                }}
+              >
+                Home
+              </button>
+              <button
+                className="w-36 text-center border-2 border-gray-100 text-gray-100 px-4 py-2 rounded active:bg-white active:text-red-500"
+                onClick={() => {
+                  setIsOpen(false);
+                  router.push('/fireball-map');
+                }}
+              >
+                Fireball Map
+              </button>
+              <button
+                className="w-36 text-center border-2 border-gray-100 text-gray-100 px-4 py-2 rounded active:bg-white active:text-red-500"
+                onClick={() => {
+                  setIsOpen(false);
+                  router.push('/#contact');
+                }}
+              >
+                Contact
+              </button>
             </div>
           </motion.nav>
         )}
