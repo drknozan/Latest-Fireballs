@@ -22,7 +22,7 @@ export default function FireballMap({ coordinates }) {
 
 export async function getStaticProps() {
   const res = await fetch(
-    'https://ssd-api.jpl.nasa.gov/fireball.api?date-min=2023-01-01&req-loc=true',
+    'https://ssd-api.jpl.nasa.gov/fireball.api?date-min=2024-01-01&req-loc=true',
   );
   const data = await res.json();
 

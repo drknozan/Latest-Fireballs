@@ -49,7 +49,7 @@ export default function HomeContainer() {
           ></Image>
           <h1 className="text-2xl mt-8">Dynamic Map</h1>
           <p className="text-sm mt-4 w-2/3 text-center">
-            Display all fireballs reported in 2023 with dynamic map.
+            Display all fireballs reported in 2024 with dynamic map.
           </p>
         </div>
         <div className="w-80 sm:w-1/3 h-[600px] flex flex-col items-center border-2 border-red-300 rounded-lg shadow-xl p-4 text-red-400 transition-all">
