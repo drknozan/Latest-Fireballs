@@ -1,6 +1,6 @@
 import MainLayout from '@/layouts/MainLayout';
 import '@/styles/globals.css';
-import { Kanit } from '@next/font/google';
+import { Kanit } from 'next/font/google';
 import '@/styles/nprogress.css';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
