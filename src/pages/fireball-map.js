@@ -10,7 +10,7 @@ export default function FireballMap({ coordinates }) {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1500);
   }, []);
 
   if (loading) {
@@ -21,9 +21,7 @@ export default function FireballMap({ coordinates }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(
-    'https://ssd-api.jpl.nasa.gov/fireball.api?date-min=2024-01-01&req-loc=true',
-  );
+  const res = await fetch('https://ssd-api.jpl.nasa.gov/fireball.api?date-min=2024-01-01&req-loc=true');
   const data = await res.json();
 
   if (!res.ok) {
